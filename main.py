@@ -1,14 +1,14 @@
 from flask import Flask, render_template, request, jsonify, Response
-from flask_cors import CORS
-from flask_bootstrap import Bootstrap
+# from flask_cors import CORS
+# from flask_bootstrap import Bootstrap
 import os
 
 from com.trainmodel.ml.Factory.ModelFactory import ModelFactory
 
 app = Flask(__name__)
-app.config['CORS_HEADERS'] = 'Content-Type'
-Bootstrap(app)
-cors = CORS(app, resources={r"/": {"origins": "/"}})
+# app.config['CORS_HEADERS'] = 'Content-Type'
+# Bootstrap(app)
+# cors = CORS(app, resources={r"/": {"origins": "/"}})
 
 
 @app.route('/')
