@@ -1,0 +1,89 @@
+{% extends "bootstrap/base.html" %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('.static', filename='trainmodel.css')}}">
+{% endblock %}
+{% block scripts %}
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type=text/javascript src="{{url_for('.static', filename='js/index.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+<div class="header">TestMyModel.ai</div>
+
+
+<div class="body">
+    <h4><b>TestMyModel.ai is the open source leader in AI</b></h4>
+    <h5>Our approach is to be open, transparent and push the bleeding edge. Our vision is to democratize AI for everyone..</h5>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-7">
+                <div class="container card bg-light mb-2" style="width: 65rem;">
+                        <div class="row">
+                            <div class="col-md-8 ">
+                                <h2> Select Your Model Type </h2>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-2">
+                               <div class="form-check ">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="regression" value="1" checked>
+                                    <label class="form-check-label">Regression</label>
+                               </div>
+                            </div>
+                            <div class="col-sm-2">
+                                <div class="form-check ">
+                                    <input class="form-check-input" type="radio" name="exampleRadios" id="classification" value="2">
+                                    <label class="form-check-label">Classification</label>
+                               </div>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h3> Select Algorithm </h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-5">
+                                <select class="form-control" id="algo">
+                                    <option value="1">Linear Regression</option>
+                                </select>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h3> Upload Your DataSet </h3>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <form id="myForm" >
+                                      <div class="form-group">
+                                        <input type="file" class="form-control-file" name="file" id="file">
+                                      </div>
+                                </form>
+                            </div>
+                        </div>
+                        <br>
+                      <button type="submit" class="btn btn-primary" onclick="testAccuracy()">Test Accuracy</button>
+                    </div>
+                </div>
+            <div class="col-sm-5">
+                <div class="container card bg-light mb-3" style="width: 65rem; height:39rem;">
+                    <h3> Model Accuracy </h3>
+                    <h4> Test Accuracy </h4>
+                    <p id="testAccuracy"></p>
+                    <h4> Train Accuracy </h4>
+                    <p id="trainAccuracy"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
